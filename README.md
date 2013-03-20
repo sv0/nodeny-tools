@@ -19,9 +19,11 @@ Installation
 ------------
 NanoBridge example.  
 Copy noauth.sh to your device:
+
     $ scp noauth.sh admin@192.168.1.1:/etc/persistent/
 
 Log in your device:
+
     $ ssh admin@192.168.1.1
     XM.v5.3.3# echo "/bin/sh /etc/persistent/noauth.sh billing.host user password &" \
         >> /etc/persistent/rc.poststart
