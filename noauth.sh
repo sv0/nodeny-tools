@@ -6,7 +6,6 @@ PASSWORD=$3
 SCHEMA="http"
 URI="/cgi-bin/stat.pl"
 URL="$SCHEMA://$HOST$URI"
-AUTH_URL="$URL?uu=$USERNAME&a=98" 
 
 get_ses()
 {
@@ -25,6 +24,7 @@ then
     echo "Nodeny web authentication."
     echo "Usage:" `basename $0` "HOST USERNAME PASSWORD"
     echo ""
+    exit 0
 fi
 
 SES=`get_ses`;
@@ -45,4 +45,3 @@ do
         PP=`md5hash $SES $PASSWORD`
     fi;
 done;
-
