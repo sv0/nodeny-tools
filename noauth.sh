@@ -9,7 +9,7 @@ URL="$SCHEMA://$HOST$URI"
 
 get_ses()
 {
-    echo `wget -q -O- $URL | grep -oE -e "([[:digit:]]{6})"`
+    echo `wget -q -O- $URL | grep -oE -e "([[:digit:]]{5,6})"`
 }
 
 md5hash()
@@ -34,14 +34,12 @@ while true;
 do
     auth_result=`wget -q -O- "$URL?uu=$USERNAME&a=98&pp=$PP"`;
     echo $auth_result | grep -q 'meta http-equiv="refresh"' 
-    if [ 0 -eq $? ];
+    if [ 0 -ne $? ];
     then
-        # AUTH OK
-        sleep 40;
-    else
         # it seems that ses key was expired
         # get new ses and pp
         SES=`get_ses`;
         PP=`md5hash $SES $PASSWORD`
     fi;
+    sleep 40;
 done;
