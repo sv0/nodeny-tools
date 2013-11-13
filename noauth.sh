@@ -9,7 +9,7 @@ URL="$SCHEMA://$HOST$URI"
 
 get_ses()
 {
-    echo `wget -q -O- $URL | grep -oE -e "([[:digit:]]{5,6})"`
+    echo `wget -q -O- $URL | grep -oE -e "([[:digit:]]{5,7})"`
 }
 
 md5hash()
