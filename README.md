@@ -1,5 +1,6 @@
 NoDeny authorizator
 ===================
+
 It is web authorization script for [Nodeny](https://ru.wikipedia.org/wiki/NoDeny) billing system.
 The script was developed for using on my AirOS powered Ubiquiti NanoBridge M2.
 Also it can be run on any linux distro.
@@ -17,7 +18,7 @@ Usage
 Installation
 ------------
 
-###Ubiquiti NanoBridge M2  
+## Ubiquiti NanoBridge M2  
 
 Copy noauth.sh to your device:
 
